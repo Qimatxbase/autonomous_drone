@@ -20,6 +20,8 @@ pybullet = ">=3.2.5"
 gymnasium = "^1.2"
 stable-baselines3 = "^2.8"
 control = "^0.10.2"
+opencv-python = ">=4.11,<6"
+tensorboard = "^2.18"
 pytest = "^9.0"
 
 [tool.poetry.dev-dependencies]
