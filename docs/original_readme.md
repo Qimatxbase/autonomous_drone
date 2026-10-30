@@ -166,7 +166,7 @@ The reward is unchanged; episode-boundary PID reset and live CNN initialization
 fix controller-state leakage and zero ReLU gradients.
 
 Charts are exported automatically after evaluations into `result/plots` as
-PNG/SVG/PDF/CSV. Open `result.ipynb`, or run `./run_result.command` to refresh
+PNG/SVG/PDF/CSV. Open `notebooks/ppo_curriculum_evaluation.ipynb`, or use `python scripts/run_notebook.py` to refresh
 its outputs using the local kernel. Charts use measured data; future stages
 remain empty. Ctrl+C saves an interrupted checkpoint. Use `--resume` to continue
 an incomplete run; existing stage data is never overwritten by a fresh run.
@@ -189,8 +189,8 @@ Evaluation interactions are recorded separately from the training step count.
 
 Models, source snapshots, per-episode histories, validation attempts and plots
 are saved in `result_5cm/`, separately from the original `result/` curriculum.
-Open `result_5cm.ipynb`, or refresh it with:
+Open `notebooks/ppo_precision_landing_evaluation.ipynb`, or refresh it with:
 
 ```sh
-.venv/bin/python scripts/run_notebook.py --notebook result_5cm.ipynb
+.venv/bin/python scripts/run_notebook.py --notebook notebooks/ppo_precision_landing_evaluation.ipynb
 ```

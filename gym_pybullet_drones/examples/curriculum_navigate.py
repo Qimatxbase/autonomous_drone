@@ -146,7 +146,7 @@ def run(args):
     fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     save_json(output/('resume_config.json' if args.resume else 'run_config.json'),dict(
         vars(args),repository=str(ROOT),pid=os.getpid(),started_at=datetime.now().astimezone().isoformat(),
-        reference='example_training_mimic_uts.ipynb',device='cpu',seed=42,
+        reference='notebooks/ppo_staged_training.ipynb',device='cpu',seed=42,
         transition='minimum target steps + 100/100 screening + independent 100/100 validation'))
     save_json(output/'versions.json',{name:importlib.metadata.version(name) for name in
         ['torch','stable-baselines3','gymnasium','numpy','pybullet']})
@@ -154,7 +154,7 @@ def run(args):
     for relative in ['envs/NavigateAviary.py','control/DSLPIDControl.py','utils/NavigateExtractor.py',
                      'examples/train_navigate.py','examples/curriculum_navigate.py']:
         shutil.copy2(ROOT/'gym_pybullet_drones'/relative,snapshot/Path(relative).name)
-    shutil.copy2(ROOT/'example_training_mimic_uts.ipynb',snapshot/'reference.ipynb')
+    shutil.copy2(ROOT/'notebooks/ppo_staged_training.ipynb',snapshot/'reference.ipynb')
     previous = None
     for stage,target,lr in zip(STAGES,args.steps,[1e-4,1e-4,1e-5]):
         directory=output/stage

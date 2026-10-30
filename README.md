@@ -1,6 +1,8 @@
-# Autonomous Drone Navigation
+# Autonomous Drone Navigation — PPO
 
 PPO drone navigation with depth observations, staged curricula and precise arrival evaluation in PyBullet.
+
+**Type:** Collaborative research prototype adapted from the credited drone projects below. Assessment provenance is not established by the supplied subject archive. PPO is the only active algorithm in this repository.
 
 **Technologies:** Python · PyBullet · Gymnasium · Stable-Baselines3
 
@@ -22,6 +24,19 @@ pip install -e .
 
 ```bash
 python -m gym_pybullet_drones.examples.curriculum_navigate --help
+```
+
+### Notebooks
+
+The `notebooks/` directory separates navigation training, staged training, curriculum evaluation and the 5 cm arrival experiment. Result notebooks discover the checkout by its contents, so the folder can be renamed. Training notebooks contain optional hardware cells; these are separate from simulation checks.
+
+To refresh saved evaluation figures with a kernel from your environment:
+
+```bash
+pip install nbformat nbclient ipykernel
+python -m ipykernel install --sys-prefix --name python3
+python scripts/run_notebook.py
+python scripts/run_notebook.py --notebook notebooks/ppo_precision_landing_evaluation.ipynb
 ```
 
 Saved checkpoints, full training runs and group report drafts remain local. Hardware deployment requires a configured Tello; the simulation can be explored independently.
