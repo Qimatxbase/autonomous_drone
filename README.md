@@ -53,5 +53,3 @@ This portfolio snapshot preserves work from the following repositories. Existing
 
 - https://github.com/Quang0309/AutoPilotDrone
 - https://github.com/learnsyslab/gym-pybullet-drones
-
-[Portfolio index](https://github.com/Qimatxbase/engineering_portfolio)
